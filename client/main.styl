@@ -1,11 +1,18 @@
+header
+  margin-bottom 15px
+  &.hide-completed
+    float right
+
 h1
   font-size:2rem
-  display inline-block
 
 form
   margin-top 10px
   margin-bottom -10px
   position relative
+
+button.deleteAll:focus
+  background-color buttonface
 
 .new-task
   input
@@ -18,11 +25,14 @@ form
     font-size 1em
     &:focus
       outline 0
-
-ul
-  margin 0
-  padding 0
-  background white
+    &::-webkit-input-placeholder
+      color #c66
+    &:-moz-placeholder
+      color #c66
+    &::-moz-placeholder
+      color #c66
+    &:-ms-input-placeholder
+      color #c66
 
 .delete
   float right
@@ -32,24 +42,16 @@ ul
   border none
   position relative
 
-li
-  position relative
-  list-style none
-  padding 15px
-  border-bottom #eee solid 1px
+.checked
+  color #888
   .text
-    margin-left 10px
-  &.checked
-    color #888
-    .text
-      text-decoration line-through
+    text-decoration line-through
+
+li
+
   &.private
     background #eee
     border-color #ddd
-
-header
-  .hide-completed
-    float right
 
 .toggle-private
   margin-left 5px
@@ -67,6 +69,8 @@ header
 @media (max-width: 600px)
   li
     padding 12px 15px
+    span
+      width:80%
   .search
     width 150px
     clear both

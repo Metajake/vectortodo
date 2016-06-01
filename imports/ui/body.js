@@ -8,6 +8,9 @@ Template.body.helpers({
     tasks() {
         return Tasks.find({}, {sort: {createdAt: -1 } });
     },
+    count() {
+        return Tasks.find({}).count();
+    },
 });
 
 Template.body.events({

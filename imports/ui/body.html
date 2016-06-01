@@ -1,16 +1,27 @@
 <body>
   <div class="container">
     <header>
-      <h1>Vector Todo List</h1>
-      <form class="new-task">
-          <input type="text" name="text" placeholder="Type to add new tasks" />
-      </form>
+      <div class="row"><h1>Vector Todo List</h1></div>
+
+
+      <div class="row">Total Task Count: {{count}}</div>
+
+        
+      <div class="row">
+          <input type="checkbox" id="hideComplete"/><label for="hideComplete" class="hide-completed">Hide Completed Tasks</label>
+          <button class="deleteAll"><span>Delete All Complete Tasks</span><i class="mdi mdi-delete"></i></button>
+      </div>
+
+      <div class="row">
+          <form class="new-task">
+              <input type="text" name="text" placeholder="Type to add new tasks" />
+          </form>
+      </div>
     </header>
 
-    <ul>
-      {{#each tasks}}
-        {{> task task=this index=@index }}
-      {{/each}}
-    </ul>
+    {{#each tasks}}
+      {{> task task=this index=@index }}
+    {{/each}}
+
   </div>
 </body>
