@@ -1,5 +1,5 @@
 <template name="task">
-    <div class="row {{#if task.checked}}checked{{/if}}">
+    <div class="task row {{#if task.checked}}checked{{/if}}">
         <div class="col s1"><input type="checkbox" checked="{{task.checked}}" class="toggle-checked" id="check{{index}}"/><label for="check{{index}}"></label></div>
         <div class="col s10 text force-break">{{> editableText collection="tasks" field="task.text"}}</div>
         <div class="col s1"><button class="delete">&times;</button></div>

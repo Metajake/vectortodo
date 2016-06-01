@@ -11,8 +11,13 @@ form
   margin-bottom -10px
   position relative
 
-button.deleteAll:focus
-  background-color buttonface
+button.deleteAll
+  float right
+  &:focus
+    background-color buttonface
+
+select
+  border 1px solid #ccc
 
 .new-task
   input
@@ -77,3 +82,6 @@ li
   .new-task
     input
       padding-bottom 5px
+  button.deleteAll
+    float none
+    margin-top 15px
