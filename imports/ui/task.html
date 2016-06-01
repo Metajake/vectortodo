@@ -2,7 +2,8 @@
     <li class="{{#if task.checked}}checked{{/if}}">
         <button class="delete">&times;</button>
         <input type="checkbox" checked="{{task.checked}}" class="toggle-checked" id="check{{index}}"/><label for="check{{index}}"></label>
-        <span class="text force-break">{{task.text}}</span>
+        <!--<span class="text force-break">{{task.text}}</span>-->
+        <span class="text force-break">{{> editableText collection="tasks" field="task.text"}}</span>
 
     </li>
 </template>

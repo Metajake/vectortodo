@@ -13,4 +13,10 @@ Template.task.events({
     'click .delete'() {
         Tasks.remove(this.task._id);
     },
+    'blur .wide-text-edit'(event) {
+        var text = event.target.value;
+        Tasks.update(this.task._id, {
+            $set: { text: text },
+        });
+    },
 });
