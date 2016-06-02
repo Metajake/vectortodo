@@ -1,10 +1,14 @@
+h4
+  font-family: 'Patua One', cursive;
+
+h6
+  font-size 1.3rem
+  font-weight: 500
+  letter-spacing:.5px
 header
   margin-bottom 15px
   &.hide-completed
     float right
-
-h1
-  font-size:2rem
 
 form
   margin-top 10px
@@ -13,8 +17,14 @@ form
 
 button.deleteAll
   float right
+  font-size 1rem
+  font-weight bold
+  letter-spacing .5px
   &:focus
     background-color buttonface
+  i
+    font-size 1.4rem
+    margin-right 3px
 
 select
   border 1px solid #ccc
@@ -27,7 +37,9 @@ select
     border-bottom #f48fb1 solid 2px
     width 100%
     padding-right 80px
-    font-size 1em
+    font-size 1.2rem
+    font-weight 500
+    letter-spacing .5px
     &:focus
       outline 0
     &::-webkit-input-placeholder
@@ -46,6 +58,8 @@ select
   font-size 1em
   border none
   position relative
+  &:focus
+    background-color #F44336
 
 .checked
   color #888
@@ -85,3 +99,5 @@ li
   button.deleteAll
     float none
     margin-top 15px
+  #filter
+    margin-bottom:15px

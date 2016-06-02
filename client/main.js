@@ -1,8 +1,9 @@
 import '../imports/ui/body.js';
 
 $(document).ready(function(){
-    $('#filter').change(function(event){
-        console.log($('#filter').val())
+    $('#filter').click(function(event){
+        $(this).change();
+    }).change(function(){
         const value = $('#filter').val();
         switch(value){
             case("all"):
@@ -15,13 +16,9 @@ $(document).ready(function(){
             case('completed'):
                 $('.checked').show();
                 $('.task:not(.checked)').hide();
+                break;
             default:
-                console.log("defaiult")
         }
-
-        //$('.checked').toggle()
     });
 
 });
-//console.log($('#hideCompleted'))
-//$('.checked').css({visibility:'none'})
