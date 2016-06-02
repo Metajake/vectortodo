@@ -1,3 +1,8 @@
+//Contents:
+//  Elements
+//  specific page sections as "top to bottom" (cascading) as I generally can
+//  Media Queries
+
 h4
   font-family: 'Patua One', cursive;
 
@@ -29,11 +34,18 @@ button.deleteAll
 select
   border 1px solid #ccc
 
+.container
+  padding 0px 20px
+
 .new-task
   input
     box-sizing border-box
-    padding 10px 0
+    padding 10px 0 10px 40px
     background transparent
+    background-image url('edit.png')
+    background-size 28px
+    background-position 0px 7px
+    background-repeat no-repeat
     border-bottom #f48fb1 solid 2px
     width 100%
     padding-right 80px
@@ -42,7 +54,7 @@ select
     letter-spacing .5px
     &:focus
       outline 0
-    &::-webkit-input-placeholder
+    &::-webkit-input-placeholder //Turn this into a DRY Stylus function?
       color #c66
     &:-moz-placeholder
       color #c66
@@ -66,14 +78,15 @@ select
   .text
     text-decoration line-through
 
-li
+.drawer
+  overflow hidden
+  height 110px
 
-  &.private
-    background #eee
-    border-color #ddd
+div.drawerIcon
+  text-align center
 
-.toggle-private
-  margin-left 5px
+#tasks
+  padding-bottom 20px
 
 .force-break
   overflow-wrap break-word
@@ -90,14 +103,13 @@ li
     padding 12px 15px
     span
       width:80%
-  .search
-    width 150px
-    clear both
+  button.deleteAll
+    float none
   .new-task
     input
       padding-bottom 5px
-  button.deleteAll
-    float none
     margin-top 15px
   #filter
     margin-bottom:15px
+  .drawer
+    height 155px

@@ -1,7 +1,7 @@
 <template name="task">
-    <div class="task row {{#if task.checked}}checked{{/if}}">
-        <div class="col s1"><input type="checkbox" checked="{{task.checked}}" class="toggle-checked" id="check{{index}}"/><label for="check{{index}}"></label></div>
-        <div class="col s10 text force-break">{{> editableText collection="tasks" field="task.text"}}</div>
+    <div class="task row {{#if task.checked}}checked{{/if}}"><!-- check to see if task is completed. Apply CSS class if so-->
+        <div class="col s1"><input type="checkbox" checked="{{task.checked}}" class="toggle-checked" id="check{{index}}"/><label for="check{{index}}"></label></div><!-- use the index property that we sent to this template to create unique ID's and For's -->
+        <div class="col s10 text force-break">{{> editableText collection="tasks" field="task.text"}}</div><!-- Each task is editable when you click on it! -->
         <div class="col s1"><button class="delete">&times;</button></div>
     </div>
 </template>

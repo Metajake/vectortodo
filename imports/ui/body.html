@@ -1,39 +1,42 @@
 <body>
   <div class="container">
     <header>
-      <div class="row"><div class="col s12">
-        {{#animate type="bounce" delay="400"}}
+      <div class="row" style="margin-bottom:10px"><div class="col s12">
+        {{#animate type="bounce" delay="400"}} <!-- Meteor Animate template code -->
           <h4>Vector Todo List</h4>
         {{/animate}}
       </div></div>
 
 
-      <div class="row" style="margin-bottom:5px;"><div class="col s12">
-        {{#animate type="bounce" delay="800"}}
-          <h6>Active Tasks: <span class="blue-text">{{count}}</span></h6>
-        {{/animate}}
-      </div></div>
+      <div class="drawer">
+          <div class="row" style="margin-bottom:5px;"><div class="col s12">
+            {{#animate type="bounce" delay="800"}} <!-- Meteor Animate template code -->
+              <h6>Active Tasks: <span class="blue-text">{{count}}</span></h6>
+            {{/animate}}
+          </div></div>
 
-        
-      <div class="row" style="margin-bottom:5px;">
-          <div class="col s12 m6">
-              <select id="filter" class="browser-default">
-                  <option value="" disabled selected>Filter Task List</option>
-                  <option value="all">View All</option>
-                  <option value="active">View Active</option>
-                  <option value="completed">View Completed</option>
-              </select>
+
+          <div class="row" style="margin-bottom:5px;">
+              <div class="col s12 m6">
+                  <select id="filter" class="browser-default">
+                      <option value="" disabled selected>Filter Task List</option>
+                      <option value="all">View All</option>
+                      <option value="active">View Active</option>
+                      <option value="completed">View Completed</option>
+                  </select>
+              </div>
+              <div class="row col s12 m6">
+                  <a class="waves-effect waves-light btn deleteAll red"><i class="mdi mdi-delete"></i> Remove Completed Tasks</a>
+              </div>
           </div>
-          <div class="row col s12 m6">
-              <a class="waves-effect waves-light btn deleteAll red"><i class="mdi mdi-delete"></i> Remove Completed Tasks</a>
-          </div>
-      </div>
+      </div><!-- end .drawer -->
+      <div class="drawerIcon"><img src="drawer.png" class="drawerIcon"></div>
 
       <div class="row">
           <div class="col s12">
               <form class="new-task">
-                {{#animate type="bounce" delay="1200"}}
-                  <input type="text" name="text" placeholder="Type to add new tasks" />
+                {{#animate type="bounce" delay="1000"}} <!-- Meteor Animate template code -->
+                  <input type="text" name="text" placeholder="Type to add new tasks"/>
                 {{/animate}}
               </form>
           </div>
@@ -41,9 +44,9 @@
     </header>
 
     <div id="tasks">
-        {{#transition in="fadeIn" out="bounceOut"}}
-            {{#each tasks}}
-              {{> task task=this index=@index }}
+        {{#transition in="fadeIn" out="bounceOut"}} <!-- Meteor Animate template code -->
+            {{#each tasks}} <!-- Meteor Template Loop. Loads up individual Tasks -->
+              {{> task task=this index=@index }} <!-- Meteor Task template (./task.html) Send it the "index" of the loop (for indivualizing our Task ID's) -->
             {{/each}}
         {{/transition}}
     </div>
